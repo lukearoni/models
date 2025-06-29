@@ -99,31 +99,34 @@ window.Quarto = {
 </header>
 
 
-<p>Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter’s choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election.</p>
+<p>Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter’s choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election. A potential weakness of our model is that it uses a relatively small sample dataset size of only 1,599 U.S. adults whereas the total voting population is in the hundreds of millions, thus resulting in issues with representativeness.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ────────────────────────────────────── tidymodels 1.3.0 ──</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  term        estimate std.error statistic  p.value conf.low conf.high
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)   -0.322    0.0513     -6.28 3.40e-10   -0.423    -0.222</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ broom        1.0.8     ✔ rsample      1.3.0
-✔ dials        1.4.0     ✔ tune         1.3.0
-✔ infer        1.0.8     ✔ workflows    1.2.0
-✔ modeldata    1.4.0     ✔ workflowsets 1.1.1
-✔ parsnip      1.3.2     ✔ yardstick    1.3.2
-✔ recipes      1.3.1     </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
-✖ scales::discard() masks purrr::discard()
-✖ dplyr::filter()   masks stats::filter()
-✖ recipes::fixed()  masks stringr::fixed()
-✖ dplyr::lag()      masks stats::lag()
-✖ yardstick::spec() masks readr::spec()
-✖ recipes::step()   masks stats::step()</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
+
+
+Call:  stats::glm(formula = biden ~ 1, family = stats::binomial, data = data)
+
+Coefficients:
+(Intercept)  
+    -0.3222  
+
+Degrees of Freedom: 1558 Total (i.e. Null);  1558 Residual
+Null Deviance:      2121 
+Residual Deviance: 2121     AIC: 2123</code></pre>
 </div>
 </div>
 <p><span class="math display">\[
 \log\left( \frac{\Pr(Y = 1)}{1 - \Pr(Y = 1)} \right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_4 + \cdots
+\]</span></p>
+<p><span class="math display">\[
+\log\left( \frac{\Pr(\text{biden} = \text{Yes})}{1 - \Pr(\text{biden} = \text{Yes})} \right) = -0.322
 \]</span></p>
 
 </main>

@@ -18,10 +18,21 @@ poll_data <- tibble(biden = as.factor(c(rep("Yes", 655),
 ```
 
 ```{r}
+#| message: false
+#| cache: true
 library(tidymodels)
 library(broom)
+fit_biden <- logistic_reg() |> 
+  fit(biden ~ 1, data = poll_data)
+tidy(fit_biden, conf.int = TRUE)
+fit_biden
 ```
 
 $$
 \log\left( \frac{\Pr(Y = 1)}{1 - \Pr(Y = 1)} \right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_4 + \cdots
 $$
+
+$$
+\log\left( \frac{\Pr(\text{biden} = \text{Yes})}{1 - \Pr(\text{biden} = \text{Yes})} \right) = -0.322
+$$
+
