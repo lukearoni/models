@@ -7,7 +7,7 @@ execute:
   message: false
 ---
 
-Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter's choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election. A potential weakness of our model is that it uses a relatively small sample dataset size of only 1,599 U.S. adults whereas the total voting population is in the hundreds of millions, thus resulting in issues with representativeness.
+Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter's choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election. A potential weakness of our model is that it uses a relatively small sample dataset size of only 1,599 U.S. adults whereas the total voting population is in the hundreds of millions, thus resulting in issues with representativeness. We model voter preference in the 2024 U.S. presidential election with the probability that a respondent supports Biden.  We use a logistic function with no predictors, capturing the overall proportion of support in the population. The outcome variable is binary, with ‘Yes’ for Biden supporters and ‘No’ for non-supporters.
 
 ```{r}
 #| message: false
@@ -26,6 +26,39 @@ fit_biden <- logistic_reg() |>
   fit(biden ~ 1, data = poll_data)
 tidy(fit_biden, conf.int = TRUE)
 fit_biden
+```
+
+```{r}
+library(gt)
+
+# Original tidy output
+results <- tibble::tibble(
+  term = "(Intercept)",
+  estimate = -0.322,
+  std.error = 0.0513,
+  conf.low = -0.423,
+  conf.high = -0.222
+)
+
+# Format the table
+results %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  rename(
+    Term = term,
+    Estimate = estimate,
+    `Std. Error` = std.error,
+    `95% CI Lower` = conf.low,
+    `95% CI Upper` = conf.high
+  ) %>%
+  gt() %>%
+  fmt_number(
+    columns = c(Estimate, `Std. Error`, `95% CI Lower`, `95% CI Upper`),
+    decimals = 3
+  ) %>%
+  tab_header(
+    title = "Logistic Regression Coefficients",
+    subtitle = "Estimated log-odds for predicting support for Biden"
+  )
 ```
 
 $$
