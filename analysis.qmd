@@ -4,9 +4,10 @@ format: html
 author: Luke Li
 execute: 
   echo: false
+  message: false
 ---
 
-Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter's choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election.
+Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter's choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election. A potential weakness of our model is that it uses a relatively small sample dataset size of only 1,599 U.S. adults whereas the total voting population is in the hundreds of millions, thus resulting in issues with representativeness.
 
 ```{r}
 #| message: false
@@ -15,3 +16,12 @@ poll_data <- tibble(biden = as.factor(c(rep("Yes", 655),
                                         rep("No", 904)))) |> 
                 slice_sample(prop = 1)
 ```
+
+```{r}
+library(tidymodels)
+library(broom)
+```
+
+$$
+\log\left( \frac{\Pr(Y = 1)}{1 - \Pr(Y = 1)} \right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_4 + \cdots
+$$
