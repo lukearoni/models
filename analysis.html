@@ -99,48 +99,27 @@ window.Quarto = {
 </header>
 
 
-<p>Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter’s choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election. A potential weakness of our model is that it uses a relatively small sample dataset size of only 1,599 U.S. adults whereas the total voting population is in the hundreds of millions, thus resulting in issues with representativeness.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 7
-  term        estimate std.error statistic  p.value conf.low conf.high
-  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1 (Intercept)   -0.322    0.0513     -6.28 3.40e-10   -0.423    -0.222</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>parsnip model object
-
-
-Call:  stats::glm(formula = biden ~ 1, family = stats::binomial, data = data)
-
-Coefficients:
-(Intercept)  
-    -0.3222  
-
-Degrees of Freedom: 1558 Total (i.e. Null);  1558 Residual
-Null Deviance:      2121 
-Residual Deviance: 2121     AIC: 2123</code></pre>
-</div>
-</div>
+<section id="table-and-plot" class="level2">
+<h2 class="anchored" data-anchor-id="table-and-plot">Table and Plot</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="efxmgbesrt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#efxmgbesrt table {
+<div id="fgcanclbrq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fgcanclbrq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#efxmgbesrt thead, #efxmgbesrt tbody, #efxmgbesrt tfoot, #efxmgbesrt tr, #efxmgbesrt td, #efxmgbesrt th {
+#fgcanclbrq thead, #fgcanclbrq tbody, #fgcanclbrq tfoot, #fgcanclbrq tr, #fgcanclbrq td, #fgcanclbrq th {
   border-style: none;
 }
 
-#efxmgbesrt p {
+#fgcanclbrq p {
   margin: 0;
   padding: 0;
 }
 
-#efxmgbesrt .gt_table {
+#fgcanclbrq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -166,12 +145,12 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_caption {
+#fgcanclbrq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#efxmgbesrt .gt_title {
+#fgcanclbrq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -183,7 +162,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-bottom-width: 0;
 }
 
-#efxmgbesrt .gt_subtitle {
+#fgcanclbrq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -195,7 +174,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-top-width: 0;
 }
 
-#efxmgbesrt .gt_heading {
+#fgcanclbrq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -207,13 +186,13 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_bottom_border {
+#fgcanclbrq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_col_headings {
+#fgcanclbrq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -228,7 +207,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_col_heading {
+#fgcanclbrq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -248,7 +227,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   overflow-x: hidden;
 }
 
-#efxmgbesrt .gt_column_spanner_outer {
+#fgcanclbrq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -260,15 +239,15 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   padding-right: 4px;
 }
 
-#efxmgbesrt .gt_column_spanner_outer:first-child {
+#fgcanclbrq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#efxmgbesrt .gt_column_spanner_outer:last-child {
+#fgcanclbrq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#efxmgbesrt .gt_column_spanner {
+#fgcanclbrq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -280,11 +259,11 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   width: 100%;
 }
 
-#efxmgbesrt .gt_spanner_row {
+#fgcanclbrq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#efxmgbesrt .gt_group_heading {
+#fgcanclbrq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -310,7 +289,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   text-align: left;
 }
 
-#efxmgbesrt .gt_empty_group_heading {
+#fgcanclbrq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -325,15 +304,15 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   vertical-align: middle;
 }
 
-#efxmgbesrt .gt_from_md > :first-child {
+#fgcanclbrq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#efxmgbesrt .gt_from_md > :last-child {
+#fgcanclbrq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#efxmgbesrt .gt_row {
+#fgcanclbrq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -352,7 +331,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   overflow-x: hidden;
 }
 
-#efxmgbesrt .gt_stub {
+#fgcanclbrq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -365,7 +344,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   padding-right: 5px;
 }
 
-#efxmgbesrt .gt_stub_row_group {
+#fgcanclbrq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -379,15 +358,15 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   vertical-align: top;
 }
 
-#efxmgbesrt .gt_row_group_first td {
+#fgcanclbrq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#efxmgbesrt .gt_row_group_first th {
+#fgcanclbrq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#efxmgbesrt .gt_summary_row {
+#fgcanclbrq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -397,16 +376,16 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   padding-right: 5px;
 }
 
-#efxmgbesrt .gt_first_summary_row {
+#fgcanclbrq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_first_summary_row.thick {
+#fgcanclbrq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#efxmgbesrt .gt_last_summary_row {
+#fgcanclbrq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -416,7 +395,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_grand_summary_row {
+#fgcanclbrq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -426,7 +405,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   padding-right: 5px;
 }
 
-#efxmgbesrt .gt_first_grand_summary_row {
+#fgcanclbrq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -436,7 +415,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_last_grand_summary_row_top {
+#fgcanclbrq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -446,11 +425,11 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_striped {
+#fgcanclbrq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#efxmgbesrt .gt_table_body {
+#fgcanclbrq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -459,7 +438,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_footnotes {
+#fgcanclbrq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -473,7 +452,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_footnote {
+#fgcanclbrq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -482,7 +461,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   padding-right: 5px;
 }
 
-#efxmgbesrt .gt_sourcenotes {
+#fgcanclbrq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -496,7 +475,7 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#efxmgbesrt .gt_sourcenote {
+#fgcanclbrq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -504,72 +483,72 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
   padding-right: 5px;
 }
 
-#efxmgbesrt .gt_left {
+#fgcanclbrq .gt_left {
   text-align: left;
 }
 
-#efxmgbesrt .gt_center {
+#fgcanclbrq .gt_center {
   text-align: center;
 }
 
-#efxmgbesrt .gt_right {
+#fgcanclbrq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#efxmgbesrt .gt_font_normal {
+#fgcanclbrq .gt_font_normal {
   font-weight: normal;
 }
 
-#efxmgbesrt .gt_font_bold {
+#fgcanclbrq .gt_font_bold {
   font-weight: bold;
 }
 
-#efxmgbesrt .gt_font_italic {
+#fgcanclbrq .gt_font_italic {
   font-style: italic;
 }
 
-#efxmgbesrt .gt_super {
+#fgcanclbrq .gt_super {
   font-size: 65%;
 }
 
-#efxmgbesrt .gt_footnote_marks {
+#fgcanclbrq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#efxmgbesrt .gt_asterisk {
+#fgcanclbrq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#efxmgbesrt .gt_indent_1 {
+#fgcanclbrq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#efxmgbesrt .gt_indent_2 {
+#fgcanclbrq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#efxmgbesrt .gt_indent_3 {
+#fgcanclbrq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#efxmgbesrt .gt_indent_4 {
+#fgcanclbrq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#efxmgbesrt .gt_indent_5 {
+#fgcanclbrq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#efxmgbesrt .katex-display {
+#fgcanclbrq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#efxmgbesrt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fgcanclbrq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -604,12 +583,29 @@ Residual Deviance: 2121     AIC: 2123</code></pre>
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>Voting for the president of the United States often feels unpredictable, but there are many variables that influence each voter’s choice that can foresee the outcome. Using March 2024 YouGov survey data from 1,559 U.S. adults, we estimate the proportion of votes Joe Biden will receive in the November election. A potential weakness of our model is that it uses a relatively small sample dataset size of only 1,599 U.S. adults whereas the total voting population is in the hundreds of millions, thus resulting in issues with representativeness. We model voter preference in the 2024 U.S. presidential election with the probability that a respondent supports Biden. We use a logistic function with no predictors, capturing the overall proportion of support in the population. The outcome variable is binary, with ‘Yes’ for Biden supporters and ‘No’ for non-supporters. A quantity of interest of our project was the proportion of voters that would vote for Biden in the 2024 US presidential election, and based off of our data we found a 95% confidence interval between −0.423 and −0.222 for log-odds (39% to 45% in normal probability). The estimates for quantities of interest might be wrong because the data we obtained came from months before the election, and last-minute voters might have different choices for who they want to elect. As a result, the real proportion of Biden voters could be higher or lower than our predicted 42%.</p>
+</section>
+<section id="mathematical-models" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-models">Mathematical Models</h2>
 <p><span class="math display">\[
 \log\left( \frac{\Pr(Y = 1)}{1 - \Pr(Y = 1)} \right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_4 + \cdots
 \]</span></p>
 <p><span class="math display">\[
 \log\left( \frac{\Pr(\text{biden} = \text{Yes})}{1 - \Pr(\text{biden} = \text{Yes})} \right) = -0.322
 \]</span></p>
+</section>
 
 </main>
 <!-- /main column -->
